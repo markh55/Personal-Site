@@ -167,24 +167,36 @@ p {
 
 /* Responsive Nav */
 @media (max-width: 768px) {
+  .toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
-    background: #1e1e2f;
+    background-color: #1e1e2f; /* Match main navbar */
     position: absolute;
-    top: 90px;
+    top: 90px; /* Adjust based on navbar height */
     right: 0;
-    width: 200px;
+    width: 100%;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid #2e2e3e;
+    transition: all 0.3s ease;
   }
 
   .nav-links.show {
     display: flex;
+    background-color: #1e1e2f; /* Explicit match */
   }
 
-  .toggle {
-    display: block;
+  .nav-links li {
+    margin: 0.5rem 0;
+    text-align: center;
   }
 }
