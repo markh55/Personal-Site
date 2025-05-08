@@ -17,7 +17,6 @@ body {
   color: #eaeaea;
   padding-top: 100px; /* Ensure content is below the fixed navbar */
   padding-bottom: 20px; /* Prevent content cut-off */
-  overflow-x: hidden;
 }
 
 /* Headings */
@@ -168,11 +167,9 @@ p {
 
 /* Projects Section */
 .projects {
-  padding: 2rem 1rem;
-  width: 100%;
+  padding: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 .projects h1 {
@@ -184,8 +181,6 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  justify-items: center;
-  width: 100%;
 }
 
 /* Project Card Style */
@@ -193,12 +188,34 @@ p {
   background-color: #1e1e2f;
   padding: 1.5rem;
   border-radius: 8px;
-  width: 100%;
-  max-width: 100%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto; /* Ensure card height adjusts automatically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Align content within the card */
+}
+
+/* Icon Container */
+.project-card .icon-container {
   text-align: center;
-  box-sizing: border-box;
+  margin-bottom: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card .icon-container i {
+  font-size: 4rem; /* Increased icon size */
+  color: #6c63ff; /* Icon color */
+  transition: transform 0.3s ease; /* Smooth animation effect on hover */
+}
+
+/* Hover Effect for Icons */
+.project-card:hover .icon-container i {
+  transform: scale(1.2); /* Slightly increase the icon size on hover */
 }
 
 .project-card h2 {
@@ -206,12 +223,14 @@ p {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: #eaeaea;
+  text-align: center;
 }
 
 .project-card p {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #ccc;
+  text-align: center;
 }
 
 .project-card a {
@@ -260,21 +279,5 @@ p {
   .nav-links li {
     margin: 0.5rem 0;
     text-align: center;
-  }
-}
-
-/* Mobile Layout Fixes */
-@media (max-width: 480px) {
-  .projects {
-    padding: 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    max-width: 100%;
-    padding: 1rem;
   }
 }
