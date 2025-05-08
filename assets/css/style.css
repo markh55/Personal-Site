@@ -15,9 +15,8 @@ body {
   font-size: 1.05rem;
   background-color: #121212;
   color: #eaeaea;
-  padding-top: 90px; /* Leaves space for sticky nav */
-  padding-bottom: 20px; /* Add padding at the bottom to ensure photo is not cut off */
-  padding-top: 100px; /* Ensure the content is below the fixed navbar */
+  padding-top: 100px; /* Ensure content is below the fixed navbar */
+  padding-bottom: 20px; /* Prevent content cut-off */
 }
 
 /* Headings */
@@ -51,7 +50,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; /* Ensures navbar stays on top of other content */
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -166,23 +165,75 @@ p {
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
+/* Projects Section */
+.projects {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projects h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Project Card Style */
+.project-card {
+  background-color: #1e1e2f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #eaeaea;
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.project-card a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #574fd6;
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive Nav */
 @media (max-width: 768px) {
   .toggle {
     display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #1e1e2f; /* Match main navbar */
+    background-color: #1e1e2f;
     position: absolute;
-    top: 90px; /* Adjust based on navbar height */
+    top: 90px;
     right: 0;
     width: 100%;
     padding: 1rem;
@@ -193,10 +244,8 @@ p {
 
   .nav-links.show {
     display: flex;
-    flex-direction: column;
-    background-color: #1e1e2f;
-    max-height: calc(100vh - 90px); /* Prevent overflow below screen */
-    overflow-y: auto;               /* Allow scroll if needed */
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
   }
 
   .nav-links li {
@@ -204,5 +253,3 @@ p {
     text-align: center;
   }
 }
-
-  
