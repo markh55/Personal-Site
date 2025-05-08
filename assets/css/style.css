@@ -16,6 +16,8 @@ body {
   background-color: #121212;
   color: #eaeaea;
   padding-top: 90px; /* Leaves space for sticky nav */
+  padding-bottom: 20px; /* Add padding at the bottom to ensure photo is not cut off */
+  padding-top: 100px; /* Ensure the content is below the fixed navbar */
 }
 
 /* Headings */
@@ -49,7 +51,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Ensures navbar stays on top of other content */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,8 +68,8 @@ p {
 }
 
 .profile-photo {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #6c63ff;
@@ -163,7 +165,6 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
-
 
 /* Responsive Nav */
 @media (max-width: 768px) {
