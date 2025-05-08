@@ -1,4 +1,4 @@
-/* Import Google Fonts */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Montserrat:wght@700&display=swap');
 
 /* Reset & Base Styles */
@@ -193,7 +193,10 @@ p {
 
   .nav-links.show {
     display: flex;
-    background-color: #1e1e2f; /* Explicit match */
+    flex-direction: column;
+    background-color: #1e1e2f;
+    max-height: calc(100vh - 90px); /* Prevent overflow below screen */
+    overflow-y: auto;               /* Allow scroll if needed */
   }
 
   .nav-links li {
@@ -201,3 +204,5 @@ p {
     text-align: center;
   }
 }
+
+  
