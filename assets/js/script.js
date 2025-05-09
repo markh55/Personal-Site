@@ -1,4 +1,7 @@
 // script.js
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
 
 // Toggle mobile navigation menu
 document.getElementById("nav-toggle").addEventListener("click", function () {
