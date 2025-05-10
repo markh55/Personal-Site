@@ -1,7 +1,14 @@
-// script.js
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
+// Disable automatic scroll restoration (helps with mobile browsers)
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+// Scroll to top on load (works across desktop and mobile)
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 0);
+});
 
 // Toggle mobile navigation menu
 document.getElementById("nav-toggle").addEventListener("click", function () {
