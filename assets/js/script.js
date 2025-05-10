@@ -15,7 +15,7 @@ document.getElementById("nav-toggle").addEventListener("click", function () {
   document.getElementById("nav-links").classList.toggle("show");
 });
 
-// Hardcoded project data with live URLs
+// Project data
 const projects = [
   {
     name: "Dart Quiz",
@@ -39,19 +39,20 @@ const projects = [
   }
 ];
 
-// Get the container element
+// ✅ Safely get the container and generate cards
 const container = document.getElementById("projects-container");
 
-// Generate project cards
-projects.forEach(project => {
-  const card = document.createElement("div");
-  card.classList.add("project-card");
+if (container) {
+  projects.forEach(project => {
+    const card = document.createElement("div");
+    card.classList.add("project-card");
 
-  card.innerHTML = `
-    <h2>${project.name}</h2>
-    <p>${project.description}</p>
-    <a href="${project.url}" target="_blank">View Project</a>
-  `;
+    card.innerHTML = `
+      <h2>${project.name}</h2>
+      <p>${project.description}</p>
+      <a href="${project.url}" target="_blank">View Project</a>
+    `;
 
-  container.appendChild(card);
-});
+    container.appendChild(card);
+  });
+}
