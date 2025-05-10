@@ -234,7 +234,7 @@ p {
 }
 
 .project-card a {
-  color: #00bcd4;
+  color: #ccc;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
